@@ -1,5 +1,5 @@
-let currentTab = "alt";
-const tabActive = ["bg-navy", "border-navy"];
+let currentTab = "all";
+const tabActive = ["bg-blue-500", "border-blue-500", "text-white"];
 const tabInactive = ["bg-transparent", "text-slate-700", "border-state-200"];
 
 function switchTab(tab) {
@@ -11,6 +11,9 @@ function switchTab(tab) {
     if (t === tab) {
       tabName.classList.remove(...tabInactive);
       tabName.classList.add(...tabActive);
+    } else {
+      tabName.classList.remove(...tabActive);
+      tabName.classList.add(...tabInactive);
     }
   }
 }

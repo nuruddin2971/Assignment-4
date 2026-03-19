@@ -43,9 +43,24 @@
         <p class="text-gray-500">8 jobs</p>
       </div>
       <div class="">
-        <button class="btn btn-soft w-24 bg-[#FFFFFF]">All</button>
-        <button class="btn btn-soft bg-[#FFFFFF]">Interview</button>
-        <button class="btn btn-soft bg-[#FFFFFF]">Rejected</button>
+        <button id="tab-all"
+          onclick="switchTab('all')"
+          class="btn btn-soft w-24 bg-[#FFFFFF]"
+        >
+          All
+        </button>
+        <button id="tab-interview"
+          onclick="switchTab('interview')"
+          class="btn btn-soft bg-[#FFFFFF]"
+        >
+          Interview
+        </button>
+        <button id="tab-rejected"
+          onclick="switchTab('rejected')"
+          class="btn btn-soft bg-[#FFFFFF]"
+        >
+          Rejected
+        </button>
       </div>
       <div class="job-cards-parent space-y-4">
         <div class="bg-[#FFFFFF] rounded-lg p-6 space-y-4">
@@ -222,5 +237,7 @@
         </div>
       </div>
     </section>
+
+    <script src="script/script.js"></script>
   </body>
 </html>

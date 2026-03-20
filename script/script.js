@@ -49,17 +49,29 @@ document
   .addEventListener("click", function (event) {
     const clickedElement = event.target;
     const card = clickedElement.closest(".card");
+    const parent = card.parentNode;
     const status = card.querySelector(".status");
 
     if (clickedElement.classList.contains("interview")) {
       status.innerText = "Interviewd";
       interviewContainer.appendChild(card);
+      updateStat();
     }
     if (clickedElement.classList.contains("rejected")) {
       status.innerText = "Rejected";
       rejectedContainer.appendChild(card);
+      updateStat();
     }
     if (clickedElement.closest(".delete")) {
-      // console.log("delete clicked");
+      parent.removeChild(card);
+      updateStat();
     }
   });
+
+function updateStat() {
+  totalStat.innerText = allContainer.children.length;
+  interviewStat.innerText = interviewContainer.children.length;
+  rejectedStat.innerText = rejectedContainer.children.length;
+}
+
+updateStat();

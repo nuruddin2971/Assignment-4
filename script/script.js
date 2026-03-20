@@ -49,13 +49,15 @@ document
   .addEventListener("click", function (event) {
     const clickedElement = event.target;
     const card = clickedElement.closest(".card");
-    console.log(card);
+    const status = card.querySelector(".status");
 
     if (clickedElement.classList.contains("interview")) {
-      // console.log("interview clicked");
+      status.innerText = "Interviewd";
+      interviewContainer.appendChild(card);
     }
     if (clickedElement.classList.contains("rejected")) {
-      // console.log("rejected clicked");
+      status.innerText = "Rejected";
+      rejectedContainer.appendChild(card);
     }
     if (clickedElement.closest(".delete")) {
       // console.log("delete clicked");

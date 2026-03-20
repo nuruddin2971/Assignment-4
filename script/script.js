@@ -7,7 +7,7 @@ const interviewContainer = document.getElementById("interview-container");
 const rejectedContainer = document.getElementById("rejected-container");
 
 function switchTab(tab) {
-  console.log(tab);
+  // console.log(tab);
   const tabs = ["all", "interview", "rejected"];
 
   for (const t of tabs) {
@@ -43,3 +43,21 @@ const rejectedStat = document.getElementById("stat-rejected");
 totalStat.innerText = allContainer.children.length;
 
 switchTab(currentTab);
+
+document
+  .getElementById("jobs-container")
+  .addEventListener("click", function (event) {
+    const clickedElement = event.target;
+    const card = clickedElement.closest(".card");
+    console.log(card);
+
+    if (clickedElement.classList.contains("interview")) {
+      // console.log("interview clicked");
+    }
+    if (clickedElement.classList.contains("rejected")) {
+      // console.log("rejected clicked");
+    }
+    if (clickedElement.closest(".delete")) {
+      // console.log("delete clicked");
+    }
+  });

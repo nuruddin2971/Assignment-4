@@ -65,7 +65,7 @@ document
     const clickedElement = event.target;
     const card = clickedElement.closest(".card");
     const parent = card.parentNode;
-    const status = card.querySelector(".status");
+    const status = card.querySelector(".current-status");
 
     if (clickedElement.classList.contains("interview")) {
       status.innerText = "Interviewd";
@@ -91,7 +91,6 @@ function updateStat() {
     interview: interviewContainer.children.length,
     rejected: rejectedContainer.children.length,
   };
-
   totalStat.innerText = counts.all;
   interviewStat.innerText = counts.interview;
   rejectedStat.innerText = counts.rejected;
